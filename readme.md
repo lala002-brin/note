@@ -42,9 +42,13 @@ Give Me” — I will share the code and workflow.
 
 
 
-'Packmol.'
+""Packmol.
+```
 'Download https://github.com/m3g/packmol/releases/tag/v21.2.1'
+```
 './configure'
+```
 'make'
+```
 'sudo ln -s ~/Downloads/packmol-21.2.1/packmol /usr/local/bin'
 

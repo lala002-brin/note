@@ -37,3 +37,14 @@ In today’s AI-driven drug discovery era, combining fast pipelines with reasona
 If you need a complete pipeline for SMILES to optimized PDB on Google Colab, write “
 Give Me” — I will share the code and workflow.
 
+
+
+
+
+
+Packmol.
+Download https://github.com/m3g/packmol/releases/tag/v21.2.1
+./configure
+make
+sudo ln -s ~/Downloads/packmol-21.2.1/packmol /usr/local/bin
+

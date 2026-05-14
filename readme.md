@@ -57,8 +57,9 @@ sudo ln -s ~/Downloads/packmol-21.2.1/packmol /usr/local/bin
 ```
 
 ### running
+```
 packmol < Cs-AHA.inp
-
+```
 
 ### Input file
 ```

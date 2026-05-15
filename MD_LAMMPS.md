@@ -1,4 +1,30 @@
-buat directory
+# buat input
+~/Documents/Working_Files/RIIM_wound_Healing/CS_AHA/xyz2lammps.sh cs-aha_5_5_unit
+cp cs-aha_5_5_unit.lammps data.cs-aha
+
+- tambahkan header
+LAMMPS data file for AHA (ReaxFF)
+  
+2315 atoms
+4 atom types
+
+0.0 100.0 xlo xhi
+0.0 100.0 ylo yhi
+0.0 100.0 zlo zhi
+
+Masses
+
+1 12.011   # C
+2 1.008   # H
+3 14.01   # N
+4 15.999  # O
+
+Atoms # id type charge x y z
+
+
+
+
+# buat directory
 - 1_NVT_equil  
 - 2_NPT_equil
 - 3_NPT_anneal

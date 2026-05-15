@@ -1,8 +1,13 @@
 # buat input
+```
 ~/Documents/Working_Files/RIIM_wound_Healing/CS_AHA/xyz2lammps.sh cs-aha_5_5_unit
+```
+```
 cp cs-aha_5_5_unit.lammps data.cs-aha
+```
 
-- tambahkan header
+- tambahkan header pada file data.cs-aha
+```
 LAMMPS data file for AHA (ReaxFF)
   
 2315 atoms
@@ -21,7 +26,7 @@ Masses
 
 Atoms # id type charge x y z
 
-
+```
 
 
 # buat directory
@@ -31,6 +36,8 @@ Atoms # id type charge x y z
 - 4_NPT_production
 - 5_NVT_production
 
+
+# 1_NVT_equil
 ### MD_CS-AHA.sh
 ```
 #!/bin/bash
@@ -127,4 +134,7 @@ run 50000
 
 ~  
 ```
+# 2_NPT_equil
+
+
 

@@ -2,6 +2,7 @@
 This repository provides a workflow for investigating the adsorption behavior of organic corrosion inhibitors on the Fe(110) surface using the SCC-DFTB method implemented in DFTB+.
 
 ## Workflow
+```
 GC-MS Identification
         ↓
 DFT Optimization (Gaussian 09)
@@ -16,19 +17,31 @@ SCC-DFTB Adsorption Simulation
 Adsorption Energy Calculation
         ↓
 Adsorption Mechanism Analysis
+```
 
 ## Computational Details
-DFT Calculations
+### DFT Calculations
 Software: Gaussian 09
+
 Functional: M06-2X
+
 Basis set: 6-311++G(d,p)
-Solvent model: SMD (water)
+
+Solvent model: CPCM (water)
+
 Frequency analysis: performed for all optimized structures
-DFTB Calculations
+
+### DFTB Calculations
 Software: DFTB+
+
 Method: SCC-DFTB
+
 Slater-Koster set: matsci
+
 Surface: Fe(110)
+
 Number of layers: 5
+
 Vacuum spacing: 50 Å
+
 Force convergence criterion:

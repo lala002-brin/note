@@ -70,6 +70,15 @@ DFTB/
 │
 └── 9_12_15_octadecatrienoate/
 ```
+## Preparing Geometry Files
+
+DFTB+ uses the GEN format as the geometry input. Optimized structures obtained from Gaussian can be converted from XYZ format using the provided script.
+
+Convert XYZ to GEN
+```
+./xyz2gen.sh namafile(tanpa xyz) S lattice
+```
+
 
 ## DFTB+ Input File
 

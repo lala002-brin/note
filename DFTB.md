@@ -46,7 +46,7 @@ Vacuum spacing: 50 Å
 
 Force convergence criterion:
 
-Directory Structure
+## Directory Structure
 ```
 DFTB/
 ├── Fe/
@@ -71,7 +71,7 @@ DFTB/
 └── 9_12_15_octadecatrienoate/
 ```
 
-DFTB+ Input File
+## DFTB+ Input File
 
 Example dftb_in.hsd
 ```

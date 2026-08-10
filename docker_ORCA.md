@@ -1186,3 +1186,239 @@ Electronic Structure Analysis
       v
 Final Results
 ```
+------------------------------------------------------------------------
+
+
+# Visualisasi File XYZ dengan VMD
+
+File XYZ hasil docking dapat dibuka menggunakan **VMD (Visual Molecular Dynamics)**.
+
+## 1. Buka File XYZ
+
+Jika file berada di server/HPC dan VMD dijalankan pada komputer lokal, salin terlebih dahulu file XYZ ke komputer lokal:
+
+```bash
+scp username@server:/path/to/docking/dock.docker.xyz .
+```
+
+Kemudian jalankan VMD:
+
+```bash
+vmd
+```
+
+## 2. Load File XYZ melalui VMD
+
+Pada VMD:
+
+```text
+File → New Molecule
+```
+
+Kemudian:
+
+```text
+Browse...
+```
+
+Pilih file:
+
+```text
+dock.docker.xyz
+```
+
+Pada bagian **Determine file type**, pilih:
+
+```text
+XYZ
+```
+
+Kemudian klik:
+
+```text
+Load
+```
+
+## 3. Membuka XYZ dari Terminal
+
+File XYZ juga dapat langsung dibuka dari terminal:
+
+```bash
+vmd dock.docker.xyz
+```
+
+Jika file hasil docking memiliki nama berbeda:
+
+```bash
+vmd filename.xyz
+```
+
+Contoh:
+
+```bash
+vmd dock.docker.struc1.xyz
+```
+
+## 4. Menampilkan Struktur
+
+Setelah file terbuka, gunakan:
+
+```text
+Graphics → Representations
+```
+
+Pada **Drawing Method**, dapat digunakan:
+
+```text
+CPK
+```
+
+atau:
+
+```text
+Licorice
+```
+
+atau:
+
+```text
+VDW
+```
+
+Untuk struktur HOST-GUEST, mode `CPK` atau `Licorice` dapat digunakan untuk melihat konfigurasi atom secara jelas.
+
+## 5. Memilih Frame Hasil Docking
+
+File XYZ dapat berisi beberapa frame/konfigurasi.
+
+Gunakan:
+
+```text
+VMD → Main Window → timestep
+```
+
+untuk berpindah antar-frame.
+
+Contoh:
+
+```text
+Frame 0
+Frame 1
+Frame 2
+Frame 3
+...
+```
+
+Hal ini berguna untuk membandingkan beberapa pose docking.
+
+## 6. Menyimpan Visualisasi
+
+Setelah mendapatkan tampilan yang diinginkan:
+
+```text
+File → Render
+```
+
+atau gunakan:
+
+```text
+File → Save Visualization State
+```
+
+State VMD dapat disimpan sebagai:
+
+```text
+docking.vmd
+```
+
+Kemudian dapat dibuka kembali melalui:
+
+```text
+File → Load Visualization State
+```
+
+## 7. Quick Command
+
+Untuk membuka hasil docking secara langsung:
+
+```bash
+vmd dock.docker.xyz
+```
+
+Untuk file kandidat tertentu:
+
+```bash
+vmd dock.docker.struc1.xyz
+```
+
+```bash
+vmd dock.docker.struc2.xyz
+```
+
+## 8. Workflow Visualisasi
+
+```text
+ORCA DOCKER
+     |
+     v
+XYZ Output
+     |
+     v
+Copy XYZ to Local Computer
+     |
+     v
+VMD
+     |
+     v
+Load XYZ
+     |
+     v
+Select Frame
+     |
+     v
+Visualize HOST-GUEST
+     |
+     v
+Save VMD State / Image
+```
+
+> **Note:** VMD digunakan untuk visualisasi. Pemilihan struktur terbaik tetap harus berdasarkan informasi energi dan hasil analisis dari output ORCA, bukan hanya berdasarkan tampilan visual.
+
+# 21. Workflow Lengkap
+
+``` text
+                 HOST
+               host.xyz
+                   |
+                   |
+                   v
+             GUEST
+            guest.xyz
+                   |
+                   v
+          +----------------+
+          |   ORCA DOCKER   |
+          +----------------+
+                   |
+                   v
+        Generate Initial Poses
+                   |
+                   v
+            Docking Search
+                   |
+                   v
+            Energy Evaluation
+                   |
+                   v
+          Low-Energy Candidates
+                   |
+                   v
+          Select Best Structures
+                   |
+                   v
+        Higher-Level Optimization
+                   |
+                   v
+             Final Analysis
+```
+
